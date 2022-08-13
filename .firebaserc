@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "comments-4fc12": {
+      "hosting": {
+        "comments-section": [
+          "comments-4fc12"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "comments-4fc12"
+  }
+}

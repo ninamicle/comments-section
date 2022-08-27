@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+//   using mixin
+//    .header-title {
+//     font-size: 2rem;
+
+//     @include for-phone-only {
+//        font-size: 1rem;
+//     }
+//  }
+
+//Colors
+//Primary
+
+$moderate-blue: hsl(238, 40%, 52%);
+$soft-red: hsl(358, 79%, 66%);
+$light-grayish-blue: hsl(239, 57%, 85%);
+$pale-red: hsl(357, 100%, 86%);
+
+//Neutral
+
+$dark-blue: hsl(212, 24%, 26%);
+$grayish-blue: hsl(211, 10%, 45%);
+$light-gray: hsl(223, 19%, 93%);
+$very-light-gray: hsl(228, 33%, 97%);
+$white: hsl(0, 0%, 100%);
+
+//Typography
+$font-size-paragraph: 16px;
+
+//Font
+$font-one: 400;
+$font-two: 500;
+$font-three: 700;
+$font-family: "Rubik", sans-serif;
+
+html {
+  font-size: 10px;
+  font-family: $font-family;
+}
+body {
+  background-color: $very-light-gray;
+}
+.card {
+  background-color: $white;
+  border-radius: 0.8rem;
+}
+btn {
+  &--like {
+  }
+  &--dislike {
+  }
+  &--replay {
+  }
+}
+.comment {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  &__score {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    font-weight: $font-two;
+    background-color: $very-light-gray;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    &--number {
+      color: $moderate-blue;
+    }
+    &--plus,
+    &--minus {
+      padding: 0.5rem;
+      font-size: 2rem;
+      border: none;
+      color: $light-grayish-blue;
+      background-color: $very-light-gray;
+      cursor: pointer;
+    }
+  }
+  &__content-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem;
+  }
+  &__content-text {
+    font-size: 1.6rem;
+    font-weight: $font-one;
+    color: $grayish-blue;
+    line-height: 2.5rem;
+  }
+}

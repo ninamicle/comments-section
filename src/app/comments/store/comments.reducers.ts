@@ -6,6 +6,7 @@ export const reducers = createReducer(
   initialState,
   on(commentsActions.getComments, (state, action) => ({
     ...state,
+    action,
   })),
   on(commentsActions.getCommentsSuccess, (state, action) => ({
     ...state,
@@ -13,6 +14,7 @@ export const reducers = createReducer(
   })),
   on(commentsActions.getCommentsFailure, (state, action) => ({
     ...state,
+    action,
     error: action.error,
   })),
 

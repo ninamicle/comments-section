@@ -10,7 +10,6 @@ export class CommentsService {
   constructor() {}
 
   getComments() {
-    debugger;
     return of([
       <UserComment>{
         id: '1',

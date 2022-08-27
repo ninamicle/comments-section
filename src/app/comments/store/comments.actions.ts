@@ -2,9 +2,9 @@ import { createAction, props } from '@ngrx/store';
 import { UserComment } from '../models';
 import { User } from '../models/user.model';
 
-export const initData = createAction('[Cooments] Init Data');
+export const initData = createAction('[Comments] Init Data');
 
-export const getComments = createAction('[Cooments] Get Comments');
+export const getComments = createAction('[Comments] Get Comments');
 
 export const getCommentsSuccess = createAction(
   '[Comments] Get Comments Success',

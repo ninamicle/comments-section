@@ -15,6 +15,6 @@ export class CommentsComponent implements OnInit {
   constructor(private store: Store) {}
 
   ngOnInit(): void {
-    this.store.dispatch(commentsActions.getComments());
+    this.store.dispatch(commentsActions.initData());
   }
 }

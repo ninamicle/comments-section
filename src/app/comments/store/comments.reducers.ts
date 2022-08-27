@@ -14,6 +14,18 @@ export const reducers = createReducer(
   on(commentsActions.getCommentsFailure, (state, action) => ({
     ...state,
     error: action.error,
+  })),
+
+  on(commentsActions.getUsers, (state, action) => ({
+    ...state,
+  })),
+  on(commentsActions.getUsersSuccess, (state, action) => ({
+    ...state,
+    users: action.users,
+  })),
+  on(commentsActions.getUsersFailure, (state, action) => ({
+    ...state,
+    error: action.error,
   }))
 );
 

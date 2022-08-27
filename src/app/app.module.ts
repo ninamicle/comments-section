@@ -9,8 +9,10 @@ import { AppComponent } from './app.component';
 import { CommentComponent } from './comments/components/comment/comment.component';
 import { CommentsComponent } from './comments/components/comments/comments.component';
 import { COMMENTS_EFFECTS, COMMENTS_REDUCERS } from './comments/store';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [AppComponent, CommentComponent, CommentsComponent],
   imports: [
@@ -26,10 +28,11 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -8,5 +8,9 @@ export const commentsSelector = createFeatureSelector<UserCommentState>(
 
 export const selectComments = createSelector(
   commentsSelector,
-  (state: UserCommentState) => state
+  (state: UserCommentState) => state.comments
+);
+export const selectUsers = createSelector(
+  commentsSelector,
+  (state: UserCommentState) => state.users
 );

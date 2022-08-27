@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { UserComment } from '../models';
+import { User } from '../models/user.model';
 
 export const initData = createAction('[Cooments] Init Data');
 
@@ -24,5 +25,15 @@ export const addCommentSuccess = createAction('[Comments] Add Comment Success');
 
 export const addCommentFailure = createAction(
   '[Comments] Add Comment Failure',
+  props<{ error: Error }>()
+);
+
+export const getUsers = createAction('[Comments] Get users');
+export const getUsersSuccess = createAction(
+  '[Comments] Get users Success',
+  props<{ users: User[] }>()
+);
+export const getUsersFailure = createAction(
+  '[Comments] Get users Failure',
   props<{ error: Error }>()
 );
